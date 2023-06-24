@@ -5,7 +5,7 @@ import 'package:leet_code_dart/src/sqrtx.dart' as sqrtx;
 import 'package:leet_code_dart/src/yang_hui_san_jiao.dart' as yang_hui_san_jiao;
 import 'package:leet_code_dart/src/array_reverse.dart' as array_reverse;
 import 'package:leet_code_dart/src/array_iterate.dart' as array_iterate;
-import 'package:test/expect.dart';
+import 'package:leet_code_dart/src/qing_wa_tiao_tai_jie.dart' as qing_wa;
 
 void main(List<String> arguments) {
   // 测试reverseWords
@@ -35,8 +35,12 @@ void main(List<String> arguments) {
   array_iterate.Solution().iterate([1,2,3], (p0){
     print("n -- $p0");
   });
-
   array_iterate.Solution().iterate([4,5,6,8,9], (p0){
     print("n -- $p0");
   });
+
+  // 测试青蛙跳
+  print(qing_wa.Solution().numWays(2));
+  print(qing_wa.Solution().numWays(7));
+  print(qing_wa.Solution().numWays(0));
 }
