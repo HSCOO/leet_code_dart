@@ -1,3 +1,5 @@
+/// https://leetcode.cn/problems/merge-sorted-array/description/
+
 /// 合并两个有序数组
 /// 给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
 ///
@@ -38,3 +40,27 @@
 ///
 ///
 /// 进阶：你可以设计实现一个时间复杂度为 O(m + n) 的算法解决此问题吗？
+///
+
+class Solution {
+  merge(List<int> nums1, int m, List<int> nums2, int n) {
+    for (int i = 0; i < n; i++) {
+      nums1[m + i] = nums2[i];
+    }
+    List<int> res = sort(nums1);
+    return res;
+  }
+
+  List<int> sort(List<int> arr) {
+    for(int i = 0; i < arr.length; i++){
+      for(int j = 0; j < arr.length - i - 1; j++){
+        if (arr[j] > arr[j+1]) {
+          int tmp = arr[j + 1];
+          arr[j + 1] = arr[j];
+          arr[j] = tmp;
+        }
+      }
+    }
+    return arr;
+  }
+}
