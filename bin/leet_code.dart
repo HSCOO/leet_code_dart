@@ -8,6 +8,7 @@ import 'package:leet_code_dart/src/array_iterate.dart' as array_iterate;
 import 'package:leet_code_dart/src/qing_wa_tiao_tai_jie.dart' as qing_wa;
 import 'package:leet_code_dart/src/sort/sort.dart';
 import 'package:leet_code_dart/src/merge_sorte_array.dart' as merge_array;
+import 'package:leet_code_dart/src/valid_palindrome.dart' as valid_palindrome;
 
 
 void main(List<String> arguments) {
@@ -54,4 +55,9 @@ void main(List<String> arguments) {
 
   // 测试合并数组
   print(merge_array.Solution().merge([1,2,3,0,0,0], 3, [2,5,6], 3));
+
+  // 验证回文文字
+  print(valid_palindrome.Solution().isPalindrome("12A man, a plan, a canal: Panama21"));
+  print(valid_palindrome.Solution().isPalindrome("race a car"));
+  print(valid_palindrome.Solution().isPalindrome("ab_a"));
 }
