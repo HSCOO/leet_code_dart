@@ -32,11 +32,35 @@
 ///
 
 class Solution {
+  bool isWordNum(String ch) {
+    int current = ch.codeUnitAt(0);
+    return (current >= 'A'.codeUnitAt(0) && current <= 'Z'.codeUnitAt(0)) ||
+        (current >= 'a'.codeUnitAt(0) && current <= 'z'.codeUnitAt(0)) ||
+        (current >= '0'.codeUnitAt(0) && current <= '9'.codeUnitAt(0));
+  }
+
   bool isPalindrome(String s) {
-    for(int i = 0; i < s.length;i++){
-      String char = s[i];
-      char.trim();
+    if (s.length == 1) {
+      return true;
     }
-    return false;
+    String res = "";
+    for(int i = 0; i < s.length; i++){
+      String char = s[i];
+      if (isWordNum(char)) {
+        res += char;
+      }
+    }
+
+    for (int i = 0; i < res.length; i++) {
+      int lastIndex = res.length - 1 - i;
+      if (lastIndex >= i) {
+        String char = res[i].toLowerCase();
+        String lastChar = res[lastIndex].toLowerCase();
+        if (char != lastChar) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 }
