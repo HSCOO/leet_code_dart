@@ -9,7 +9,7 @@ import 'package:leet_code_dart/src/qing_wa_tiao_tai_jie.dart' as qing_wa;
 import 'package:leet_code_dart/src/sort/sort.dart';
 import 'package:leet_code_dart/src/merge_sorte_array.dart' as merge_array;
 import 'package:leet_code_dart/src/valid_palindrome.dart' as valid_palindrome;
-
+import 'package:leet_code_dart/src/excel_sheet_column_number.dart' as excel_sheet;
 
 void main(List<String> arguments) {
   // 测试reverseWords
@@ -60,4 +60,8 @@ void main(List<String> arguments) {
   print(valid_palindrome.Solution().isPalindrome("12A man, a plan, a canal: Panama21"));
   print(valid_palindrome.Solution().isPalindrome("race a car"));
   print(valid_palindrome.Solution().isPalindrome("ab_a"));
+
+  // 验证Excel表列序号
+  print(excel_sheet.Solution().titleToNumber("AA"));
+  print(excel_sheet.Solution().titleToNumber("ZY"));
 }
