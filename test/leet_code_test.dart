@@ -19,6 +19,7 @@ import 'package:leet_code_dart/src/valid_anagram.dart' as valid_anagram;
 import 'package:leet_code_dart/src/missing_number.dart' as missing_number;
 
 import 'package:leet_code_dart/src/power_of_three.dart' as power_of_three;
+import 'package:leet_code_dart/src/fizz_buzz.dart' as fizz_buzz;
 
 void main() {
   // 测试reverseWords
@@ -153,5 +154,10 @@ void main() {
     expect(power_of_three.Solution().isPowerOfThree(45), equals(false));
     expect(power_of_three.Solution().isPowerOfThree(27), equals(true));
     expect(power_of_three.Solution().isPowerOfThree(100), equals(false));
+  });
+
+  // Fizz Buzz
+  test("fizz_buzz", (){
+    expect(fizz_buzz.Solution().fizzBuzz(3), equals(["1","2","Fizz"]));
   });
 }
