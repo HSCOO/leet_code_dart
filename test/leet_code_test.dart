@@ -18,6 +18,8 @@ import 'package:leet_code_dart/src/excel_sheet_column_number.dart'
 import 'package:leet_code_dart/src/valid_anagram.dart' as valid_anagram;
 import 'package:leet_code_dart/src/missing_number.dart' as missing_number;
 
+import 'package:leet_code_dart/src/power_of_three.dart' as power_of_three;
+
 void main() {
   // 测试reverseWords
   test("reverse_words", () {
@@ -143,5 +145,13 @@ void main() {
   // 丢失的数字
   test("missing_number", (){
     expect(missing_number.Solution().missingNumber([3,0,1]), equals(2));
+  });
+
+  // 3的幂
+  test("power_of_three", (){
+    expect(power_of_three.Solution().isPowerOfThree(9), equals(true));
+    expect(power_of_three.Solution().isPowerOfThree(45), equals(false));
+    expect(power_of_three.Solution().isPowerOfThree(27), equals(true));
+    expect(power_of_three.Solution().isPowerOfThree(100), equals(false));
   });
 }
