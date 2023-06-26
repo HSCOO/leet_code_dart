@@ -15,6 +15,7 @@ import 'package:leet_code_dart/src/merge_sorte_array.dart' as merge_array;
 import 'package:leet_code_dart/src/valid_palindrome.dart' as valid_palindrome;
 import 'package:leet_code_dart/src/excel_sheet_column_number.dart'
     as excel_sheet;
+import 'package:leet_code_dart/src/valid_anagram.dart' as valid_anagram; 
 
 void main() {
   // 测试reverseWords
@@ -131,5 +132,10 @@ void main() {
     expect(solution.containsDuplicate([1, 2, 3, 4]), equals(false));
     expect(solution.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]),
         equals(true));
+  });
+  
+  // 有效的字母异位词
+  test("valid_anagram", (){
+    expect(valid_anagram.Solution().isAnagram("rat", "car"), equals(false));
   });
 }
