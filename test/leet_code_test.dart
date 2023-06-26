@@ -20,6 +20,7 @@ import 'package:leet_code_dart/src/missing_number.dart' as missing_number;
 
 import 'package:leet_code_dart/src/power_of_three.dart' as power_of_three;
 import 'package:leet_code_dart/src/fizz_buzz.dart' as fizz_buzz;
+import 'package:leet_code_dart/src/counting_bits.dart' as counting_bits;
 
 void main() {
   // 测试reverseWords
@@ -159,5 +160,11 @@ void main() {
   // Fizz Buzz
   test("fizz_buzz", (){
     expect(fizz_buzz.Solution().fizzBuzz(3), equals(["1","2","Fizz"]));
+  });
+
+  // 比特位计数
+  test("counting_bits", (){
+    expect(counting_bits.Solution().countBits(2), equals([0,1,1]));
+    expect(counting_bits.Solution().countBits(5), equals([0,1,1,2,1,2]));
   });
 }
