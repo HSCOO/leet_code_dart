@@ -15,7 +15,8 @@ import 'package:leet_code_dart/src/merge_sorte_array.dart' as merge_array;
 import 'package:leet_code_dart/src/valid_palindrome.dart' as valid_palindrome;
 import 'package:leet_code_dart/src/excel_sheet_column_number.dart'
     as excel_sheet;
-import 'package:leet_code_dart/src/valid_anagram.dart' as valid_anagram; 
+import 'package:leet_code_dart/src/valid_anagram.dart' as valid_anagram;
+import 'package:leet_code_dart/src/missing_number.dart' as missing_number;
 
 void main() {
   // 测试reverseWords
@@ -137,5 +138,10 @@ void main() {
   // 有效的字母异位词
   test("valid_anagram", (){
     expect(valid_anagram.Solution().isAnagram("rat", "car"), equals(false));
+  });
+
+  // 丢失的数字
+  test("missing_number", (){
+    expect(missing_number.Solution().missingNumber([3,0,1]), equals(2));
   });
 }
