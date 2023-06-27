@@ -21,6 +21,7 @@ import 'package:leet_code_dart/src/missing_number.dart' as missing_number;
 import 'package:leet_code_dart/src/power_of_three.dart' as power_of_three;
 import 'package:leet_code_dart/src/fizz_buzz.dart' as fizz_buzz;
 import 'package:leet_code_dart/src/counting_bits.dart' as counting_bits;
+import 'package:leet_code_dart/src/longest_substring.dart' as longest_substring;
 
 void main() {
   // 测试reverseWords
@@ -166,5 +167,12 @@ void main() {
   test("counting_bits", (){
     expect(counting_bits.Solution().countBits(2), equals([0,1,1]));
     expect(counting_bits.Solution().countBits(5), equals([0,1,1,2,1,2]));
+  });
+
+  // 无重复字符的最长子串
+  test("longest_substring", (){
+    expect(longest_substring.Solution().lengthOfLongestSubstring("abcabcbb"), equals(3));
+    expect(longest_substring.Solution().lengthOfLongestSubstring("bbbbbbb"), equals(1));
+    expect(longest_substring.Solution().lengthOfLongestSubstring("pwwkew"), equals(3));
   });
 }
