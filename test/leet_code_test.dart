@@ -22,6 +22,8 @@ import 'package:leet_code_dart/src/power_of_three.dart' as power_of_three;
 import 'package:leet_code_dart/src/fizz_buzz.dart' as fizz_buzz;
 import 'package:leet_code_dart/src/counting_bits.dart' as counting_bits;
 import 'package:leet_code_dart/src/longest_substring.dart' as longest_substring;
+import 'package:leet_code_dart/src/longest_palindromic_substring.dart' as longest_palindromic_substring;
+import 'package:leet_code_dart/src/three_sum.dart' as three_sum;
 
 void main() {
   // 测试reverseWords
@@ -174,5 +176,23 @@ void main() {
     expect(longest_substring.Solution().lengthOfLongestSubstring("abcabcbb"), equals(3));
     expect(longest_substring.Solution().lengthOfLongestSubstring("bbbbbbb"), equals(1));
     expect(longest_substring.Solution().lengthOfLongestSubstring("pwwkew"), equals(3));
+  });
+
+  // 最长回文子串
+  test("longest_palindromic_substring", (){
+    // expect(longest_palindromic_substring.Solution().longestPalindrome("babad"), equals("bab"));
+    // expect(longest_palindromic_substring.Solution().longestPalindrome("cbbd"), equals("bb"));
+    // expect(longest_palindromic_substring.Solution().longestPalindrome("a"), equals("a"));
+    // expect(longest_palindromic_substring.Solution().longestPalindrome("ac"), equals("a"));
+    // expect(longest_palindromic_substring.Solution().longestPalindrome("abcdfe"), equals("a"));
+    expect(longest_palindromic_substring.Solution().longestPalindrome("aacabdkacaa"), equals("aca"));
+  });
+
+  // 无重复字符的最长子串
+  test("three_sum", (){
+    expect(three_sum.Solution().threeSum([-1,0,1,2,-1,-4]), equals([[-1,-1,2],[-1,0,1]]));
+    expect(three_sum.Solution().threeSum([0,1,1]), equals([]));
+    expect(three_sum.Solution().threeSum([0,0,0]), equals([[0,0,0]]));
+    expect(three_sum.Solution().threeSum([-1,-1,-1,2]), equals([[-1,-1,2]]));
   });
 }
