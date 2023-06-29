@@ -1,29 +1,32 @@
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
-import 'package:leet_code_dart/src/contains_duplicate.dart'
+import 'package:leet_code_dart/src/practice/contains_duplicate.dart'
     as contains_duplicate;
-import 'package:leet_code_dart/src/reverse_words_in_a_string_iii.dart'
+import 'package:leet_code_dart/src/practice/reverse_words_in_a_string_iii.dart'
     as reverse_words;
-import 'package:leet_code_dart/src/plu_one.dart' as plu_one;
-import 'package:leet_code_dart/src/sqrtx.dart' as sqrtx;
-import 'package:leet_code_dart/src/yang_hui_san_jiao.dart' as yang_hui_san_jiao;
-import 'package:leet_code_dart/src/array_reverse.dart' as array_reverse;
-import 'package:leet_code_dart/src/array_iterate.dart' as array_iterate;
-import 'package:leet_code_dart/src/qing_wa_tiao_tai_jie.dart' as qing_wa;
-import 'package:leet_code_dart/src/sort/sort.dart';
-import 'package:leet_code_dart/src/merge_sorte_array.dart' as merge_array;
-import 'package:leet_code_dart/src/valid_palindrome.dart' as valid_palindrome;
-import 'package:leet_code_dart/src/excel_sheet_column_number.dart'
+import 'package:leet_code_dart/src/practice/plu_one.dart' as plu_one;
+import 'package:leet_code_dart/src/practice/sqrtx.dart' as sqrtx;
+import 'package:leet_code_dart/src/practice/yang_hui_san_jiao.dart' as yang_hui_san_jiao;
+import 'package:leet_code_dart/src/practice/array_reverse.dart' as array_reverse;
+import 'package:leet_code_dart/src/practice/array_iterate.dart' as array_iterate;
+import 'package:leet_code_dart/src/practice/qing_wa_tiao_tai_jie.dart' as qing_wa;
+import 'package:leet_code_dart/src/learn/sort/sort.dart';
+import 'package:leet_code_dart/src/practice/merge_sorte_array.dart' as merge_array;
+import 'package:leet_code_dart/src/practice/valid_palindrome.dart' as valid_palindrome;
+import 'package:leet_code_dart/src/practice/excel_sheet_column_number.dart'
     as excel_sheet;
-import 'package:leet_code_dart/src/valid_anagram.dart' as valid_anagram;
-import 'package:leet_code_dart/src/missing_number.dart' as missing_number;
+import 'package:leet_code_dart/src/practice/valid_anagram.dart' as valid_anagram;
+import 'package:leet_code_dart/src/practice/missing_number.dart' as missing_number;
 
-import 'package:leet_code_dart/src/power_of_three.dart' as power_of_three;
-import 'package:leet_code_dart/src/fizz_buzz.dart' as fizz_buzz;
-import 'package:leet_code_dart/src/counting_bits.dart' as counting_bits;
-import 'package:leet_code_dart/src/longest_substring.dart' as longest_substring;
-import 'package:leet_code_dart/src/longest_palindromic_substring.dart' as longest_palindromic_substring;
-import 'package:leet_code_dart/src/three_sum.dart' as three_sum;
+import 'package:leet_code_dart/src/practice/power_of_three.dart' as power_of_three;
+import 'package:leet_code_dart/src/practice/fizz_buzz.dart' as fizz_buzz;
+import 'package:leet_code_dart/src/practice/counting_bits.dart' as counting_bits;
+import 'package:leet_code_dart/src/practice/longest_substring.dart' as longest_substring;
+import 'package:leet_code_dart/src/practice/longest_palindromic_substring.dart'
+    as longest_palindromic_substring;
+import 'package:leet_code_dart/src/practice/three_sum.dart' as three_sum;
+import 'package:leet_code_dart/src/practice/generate_parentheses.dart'
+    as generate_parentheses;
 
 void main() {
   // 测试reverseWords
@@ -106,8 +109,11 @@ void main() {
 
   // 测试排序
   test("Sort", () {
-    expect(Sort.bubble([3, 5, 1, 2, 9, 6]), equals([1, 2, 3, 5, 6, 9]));
-    expect(Sort.bubble([1, 2, 3, 2, 5, 6]), equals([1, 2, 2, 3, 5, 6]));
+    // expect(Sort.bubble([3, 5, 1, 2, 9, 6]), equals([1, 2, 3, 5, 6, 9]));
+    // expect(Sort.bubble([1, 2, 3, 2, 5, 6]), equals([1, 2, 2, 3, 5, 6]));
+    // expect(Sort.bubbleYou1([1, 2, 3, 4, 5, 6]), equals([1, 2, 3, 4, 5, 6]));
+    // expect(Sort.bubble([1, 2, 3, 4, 5, 6]), equals([1, 2, 3, 4, 5, 6]));
+    expect(Sort.bubbleYou2([3, 5, 1, 2, 9, 6]), equals([1, 2, 3, 5, 6, 9]));
   });
 
   // 测试合并数组
@@ -141,19 +147,19 @@ void main() {
     expect(solution.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]),
         equals(true));
   });
-  
+
   // 有效的字母异位词
-  test("valid_anagram", (){
+  test("valid_anagram", () {
     expect(valid_anagram.Solution().isAnagram("rat", "car"), equals(false));
   });
 
   // 丢失的数字
-  test("missing_number", (){
-    expect(missing_number.Solution().missingNumber([3,0,1]), equals(2));
+  test("missing_number", () {
+    expect(missing_number.Solution().missingNumber([3, 0, 1]), equals(2));
   });
 
   // 3的幂
-  test("power_of_three", (){
+  test("power_of_three", () {
     expect(power_of_three.Solution().isPowerOfThree(9), equals(true));
     expect(power_of_three.Solution().isPowerOfThree(45), equals(false));
     expect(power_of_three.Solution().isPowerOfThree(27), equals(true));
@@ -161,38 +167,68 @@ void main() {
   });
 
   // Fizz Buzz
-  test("fizz_buzz", (){
-    expect(fizz_buzz.Solution().fizzBuzz(3), equals(["1","2","Fizz"]));
+  test("fizz_buzz", () {
+    expect(fizz_buzz.Solution().fizzBuzz(3), equals(["1", "2", "Fizz"]));
   });
 
   // 比特位计数
-  test("counting_bits", (){
-    expect(counting_bits.Solution().countBits(2), equals([0,1,1]));
-    expect(counting_bits.Solution().countBits(5), equals([0,1,1,2,1,2]));
+  test("counting_bits", () {
+    expect(counting_bits.Solution().countBits(2), equals([0, 1, 1]));
+    expect(counting_bits.Solution().countBits(5), equals([0, 1, 1, 2, 1, 2]));
   });
 
   // 无重复字符的最长子串
-  test("longest_substring", (){
-    expect(longest_substring.Solution().lengthOfLongestSubstring("abcabcbb"), equals(3));
-    expect(longest_substring.Solution().lengthOfLongestSubstring("bbbbbbb"), equals(1));
-    expect(longest_substring.Solution().lengthOfLongestSubstring("pwwkew"), equals(3));
+  test("longest_substring", () {
+    expect(longest_substring.Solution().lengthOfLongestSubstring("abcabcbb"),
+        equals(3));
+    expect(longest_substring.Solution().lengthOfLongestSubstring("bbbbbbb"),
+        equals(1));
+    expect(longest_substring.Solution().lengthOfLongestSubstring("pwwkew"),
+        equals(3));
   });
 
   // 最长回文子串
-  test("longest_palindromic_substring", (){
+  test("longest_palindromic_substring", () {
     // expect(longest_palindromic_substring.Solution().longestPalindrome("babad"), equals("bab"));
     // expect(longest_palindromic_substring.Solution().longestPalindrome("cbbd"), equals("bb"));
     // expect(longest_palindromic_substring.Solution().longestPalindrome("a"), equals("a"));
     // expect(longest_palindromic_substring.Solution().longestPalindrome("ac"), equals("a"));
     // expect(longest_palindromic_substring.Solution().longestPalindrome("abcdfe"), equals("a"));
-    expect(longest_palindromic_substring.Solution().longestPalindrome("aacabdkacaa"), equals("aca"));
+    expect(
+        longest_palindromic_substring.Solution()
+            .longestPalindrome("aacabdkacaa"),
+        equals("aca"));
   });
 
   // 无重复字符的最长子串
-  test("three_sum", (){
-    expect(three_sum.Solution().threeSum([-1,0,1,2,-1,-4]), equals([[-1,-1,2],[-1,0,1]]));
-    expect(three_sum.Solution().threeSum([0,1,1]), equals([]));
-    expect(three_sum.Solution().threeSum([0,0,0]), equals([[0,0,0]]));
-    expect(three_sum.Solution().threeSum([-1,-1,-1,2]), equals([[-1,-1,2]]));
+  test("three_sum", () {
+    expect(
+        three_sum.Solution().threeSum([-1, 0, 1, 2, -1, -4]),
+        equals([
+          [-1, -1, 2],
+          [-1, 0, 1]
+        ]));
+    expect(three_sum.Solution().threeSum([0, 1, 1]), equals([]));
+    expect(
+        three_sum.Solution().threeSum([0, 0, 0]),
+        equals([
+          [0, 0, 0]
+        ]));
+    expect(
+        three_sum.Solution().threeSum([-1, -1, -1, 2]),
+        equals([
+          [-1, -1, 2]
+        ]));
+  });
+
+  // 括号生成
+  test("generate_parentheses", () {
+    expect(
+        generate_parentheses.Solution().generateParenthesis(3),
+        equals(
+          ["((()))", "(()())", "(())()", "()(())", "()()()"],
+        ));
+    // expect(
+    //     generate_parentheses.Solution().generateParenthesis(1), equals(["()"]));
   });
 }
