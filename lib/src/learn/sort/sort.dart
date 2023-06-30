@@ -1,4 +1,6 @@
 
+import 'dart:math';
+
 /// 排序算法
 class Sort {
   /// 冒泡排序
@@ -55,6 +57,22 @@ class Sort {
         }
       }
       i = sortedIndex;
+    }
+    return arr;
+  }
+
+  /// 选择排序
+  static List<int> select(List<int> arr){
+    for(int end = arr.length - 1; end > 0; end--){
+      int maxIndex = 0;
+      for(int begin = 0; begin <= end; begin++){
+        if(arr[maxIndex] <= arr[begin]){
+          maxIndex = begin;
+        }
+      }
+      int tmp = arr[maxIndex];
+      arr[maxIndex] = arr[end];
+      arr[end] = tmp;
     }
     return arr;
   }
