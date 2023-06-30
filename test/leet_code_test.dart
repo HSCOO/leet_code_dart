@@ -114,7 +114,9 @@ void main() {
     // expect(Sort.bubbleYou1([1, 2, 3, 4, 5, 6]), equals([1, 2, 3, 4, 5, 6]));
     // expect(Sort.bubble([1, 2, 3, 4, 5, 6]), equals([1, 2, 3, 4, 5, 6]));
     // expect(Sort.bubbleYou2([3, 5, 1, 2, 9, 6]), equals([1, 2, 3, 5, 6, 9]));
-    expect(Sort.select([3, 5, 1, 2, 9, 6]), equals([1, 2, 3, 5, 6, 9]));
+    // expect(Sort.select([3, 5, 1, 2, 9, 6]), equals([1, 2, 3, 5, 6, 9]));
+    // expect(Sort.insert([3, 5, 1, 2, 9, 6]), equals([1, 2, 3, 5, 6, 9]));
+    expect(Sort.insertYou2([3, 5, 1, 2, 9, 6]), equals([1, 2, 3, 5, 6, 9]));
   });
 
   // 测试合并数组
@@ -224,13 +226,13 @@ void main() {
 
   // 括号生成
   test("generate_parentheses", () {
-    // expect(
-    //     generate_parentheses.Solution().generateParenthesis(3),
-    //     equals(
-    //       ["((()))", "(()())", "(())()", "()(())", "()()()"],
-    //     ));
-    // expect(
-    //     generate_parentheses.Solution().generateParenthesis(1), equals(["()"]));
+    expect(
+        generate_parentheses.Solution().generateParenthesis(3),
+        equals(
+          ["((()))", "(()())", "(())()", "()(())", "()()()"],
+        ));
+    expect(
+        generate_parentheses.Solution().generateParenthesis(1), equals(["()"]));
     expect(
         generate_parentheses.Solution().generateParenthesis(2), equals(["(())","()()"]));
   });
