@@ -6,27 +6,40 @@ import 'package:leet_code_dart/src/practice/reverse_words_in_a_string_iii.dart'
     as reverse_words;
 import 'package:leet_code_dart/src/practice/plu_one.dart' as plu_one;
 import 'package:leet_code_dart/src/practice/sqrtx.dart' as sqrtx;
-import 'package:leet_code_dart/src/practice/yang_hui_san_jiao.dart' as yang_hui_san_jiao;
-import 'package:leet_code_dart/src/practice/array_reverse.dart' as array_reverse;
-import 'package:leet_code_dart/src/practice/array_iterate.dart' as array_iterate;
-import 'package:leet_code_dart/src/practice/qing_wa_tiao_tai_jie.dart' as qing_wa;
+import 'package:leet_code_dart/src/practice/yang_hui_san_jiao.dart'
+    as yang_hui_san_jiao;
+import 'package:leet_code_dart/src/practice/array_reverse.dart'
+    as array_reverse;
+import 'package:leet_code_dart/src/practice/array_iterate.dart'
+    as array_iterate;
+import 'package:leet_code_dart/src/practice/qing_wa_tiao_tai_jie.dart'
+    as qing_wa;
 import 'package:leet_code_dart/src/learn/sort/sort.dart';
-import 'package:leet_code_dart/src/practice/merge_sorte_array.dart' as merge_array;
-import 'package:leet_code_dart/src/practice/valid_palindrome.dart' as valid_palindrome;
+import 'package:leet_code_dart/src/practice/merge_sorte_array.dart'
+    as merge_array;
+import 'package:leet_code_dart/src/practice/valid_palindrome.dart'
+    as valid_palindrome;
 import 'package:leet_code_dart/src/practice/excel_sheet_column_number.dart'
     as excel_sheet;
-import 'package:leet_code_dart/src/practice/valid_anagram.dart' as valid_anagram;
-import 'package:leet_code_dart/src/practice/missing_number.dart' as missing_number;
+import 'package:leet_code_dart/src/practice/valid_anagram.dart'
+    as valid_anagram;
+import 'package:leet_code_dart/src/practice/missing_number.dart'
+    as missing_number;
 
-import 'package:leet_code_dart/src/practice/power_of_three.dart' as power_of_three;
+import 'package:leet_code_dart/src/practice/power_of_three.dart'
+    as power_of_three;
 import 'package:leet_code_dart/src/practice/fizz_buzz.dart' as fizz_buzz;
-import 'package:leet_code_dart/src/practice/counting_bits.dart' as counting_bits;
-import 'package:leet_code_dart/src/practice/longest_substring.dart' as longest_substring;
+import 'package:leet_code_dart/src/practice/counting_bits.dart'
+    as counting_bits;
+import 'package:leet_code_dart/src/practice/longest_substring.dart'
+    as longest_substring;
 import 'package:leet_code_dart/src/practice/longest_palindromic_substring.dart'
     as longest_palindromic_substring;
 import 'package:leet_code_dart/src/practice/three_sum.dart' as three_sum;
 import 'package:leet_code_dart/src/practice/generate_parentheses.dart'
     as generate_parentheses;
+import 'package:leet_code_dart/src/practice/container_with_most_water.dart'
+    as container_with_most_water;
 
 void main() {
   // 测试reverseWords
@@ -235,5 +248,21 @@ void main() {
         generate_parentheses.Solution().generateParenthesis(1), equals(["()"]));
     expect(
         generate_parentheses.Solution().generateParenthesis(2), equals(["(())","()()"]));
+  });
+
+  //
+  test("container_with_most_water", () {
+    expect(
+      container_with_most_water.Solution().maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]),
+      equals(49),
+    );
+    expect(
+      container_with_most_water.Solution().maxArea([1, 1]),
+      equals(1),
+    );
+    expect(
+      container_with_most_water.Solution().maxArea([2, 3, 3]),
+      equals(4),
+    );
   });
 }
