@@ -1,3 +1,4 @@
+import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 import 'package:leet_code_dart/src/practice/contains_duplicate.dart'
@@ -40,6 +41,7 @@ import 'package:leet_code_dart/src/practice/generate_parentheses.dart'
     as generate_parentheses;
 import 'package:leet_code_dart/src/practice/container_with_most_water.dart'
     as container_with_most_water;
+import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart' as yong_liang_ge_zhan;
 
 void main() {
   // 测试reverseWords
@@ -250,7 +252,7 @@ void main() {
         generate_parentheses.Solution().generateParenthesis(2), equals(["(())","()()"]));
   });
 
-  //
+  // 接水最多
   test("container_with_most_water", () {
     expect(
       container_with_most_water.Solution().maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]),
@@ -264,5 +266,15 @@ void main() {
       container_with_most_water.Solution().maxArea([2, 3, 3]),
       equals(4),
     );
+  });
+
+  // yong_liang_ge_zhan
+  test("yong_liang_ge_zhan", () {
+    CQueue queue = CQueue();
+    expect(queue.deleteHead(), equals(-1));
+    queue.appendTail(5);
+    queue.appendTail(2);
+    expect(queue.deleteHead(), equals(5));
+    expect(queue.deleteHead(), equals(2));
   });
 }
