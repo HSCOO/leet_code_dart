@@ -21,8 +21,26 @@
 ///0 <= n <= 100
 
 
+// 解法1：递归
+// class Solution {
+//   Map<int,int> cache = {};
+//   int numWays(int n) {
+//     // 缓存之前计算好的值
+//     if (n == 0) {
+//       return 1;
+//     }
+//     if (n <= 2) {
+//       return n;
+//     }
+//     if (!cache.containsKey(n)) {
+//       cache[n] = (numWays(n - 1) + numWays(n - 2)) % 1000000007;
+//     }
+//     return cache[n] ?? 1;
+//   }
+// }
+
+// 解法2：动态规划+滑动数组
 class Solution {
-  Map<int,int> cache = {};
   int numWays(int n) {
     // 缓存之前计算好的值
     if (n == 0) {
@@ -31,9 +49,14 @@ class Solution {
     if (n <= 2) {
       return n;
     }
-    if (!cache.containsKey(n)) {
-      cache[n] = (numWays(n - 1) + numWays(n - 2)) % 1000000007;
+    int q = 1;
+    int p = 1;
+    int sum = 2;
+    for(int i = 2; i < n; i++){
+      q = p;
+      p = sum;
+      sum = (q + p) % 1000000007;
     }
-    return cache[n] ?? 1;
+    return sum;
   }
 }

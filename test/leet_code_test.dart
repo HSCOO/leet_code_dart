@@ -44,7 +44,6 @@ import 'package:leet_code_dart/src/practice/container_with_most_water.dart'
 import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart' as yong_liang_ge_zhan;
 import 'package:leet_code_dart/src/offer/fei_bo_na_qi_shu_lie.dart' as fei_bo_na_qi_shu_lie;
 
-
 void main() {
   // 测试reverseWords
   test("reverse_words", () {
@@ -108,7 +107,7 @@ void main() {
   });
 
   // 测试数组遍历
-  test("qing_wa", () {
+  test("array_iterate", () {
     array_iterate.Solution().iterate([1, 2, 3], (p0) {
       print("one -- $p0");
     });

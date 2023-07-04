@@ -32,20 +32,37 @@
 /// 第二轮：p:1 q:1 sum:(1+1)%1000000007=2
 /// 第三轮：p:1 q:2 sum:(1+2)%1000000007=3
 /// 第四轮：p:2 q:3 sum:(2+3)%1000000007=5
+
+// class Solution {
+//   int fib(int n) {
+//     const int mod = 1000000007;
+//     if (n < 2) {
+//       return n;
+//     }
+//     int p = 0;
+//     int q = 0;
+//     int sum = 1;
+//     for(int i = 2; i <= n; i++){
+//       p = q;
+//       q = sum;
+//       sum = (p + q) % mod;
+//     }
+//     return sum;
+//   }
+// }
+
+
+/// 解法2：递归解法
 class Solution {
+  Map<int,int> cache = {};
   int fib(int n) {
     const int mod = 1000000007;
     if (n < 2) {
       return n;
     }
-    int p = 0;
-    int q = 0;
-    int sum = 1;
-    for(int i = 2; i <= n; i++){
-      p = q;
-      q = sum;
-      sum = (p + q) % mod;
+    if (!cache.containsKey(n)) {
+      cache[n] = (fib(n-1) + fib(n-2)) % mod;
     }
-    return sum;
+    return cache[n] ?? 0;
   }
 }
