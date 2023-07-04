@@ -42,6 +42,8 @@ import 'package:leet_code_dart/src/practice/generate_parentheses.dart'
 import 'package:leet_code_dart/src/practice/container_with_most_water.dart'
     as container_with_most_water;
 import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart' as yong_liang_ge_zhan;
+import 'package:leet_code_dart/src/offer/fei_bo_na_qi_shu_lie.dart' as fei_bo_na_qi_shu_lie;
+
 
 void main() {
   // 测试reverseWords
@@ -276,5 +278,11 @@ void main() {
     queue.appendTail(2);
     expect(queue.deleteHead(), equals(5));
     expect(queue.deleteHead(), equals(2));
+  });
+
+  // 剑指 Offer 10- I. 斐波那契数列
+  test("fei_bo_na_qi_shu_lie", () {
+    expect(fei_bo_na_qi_shu_lie.Solution().fib(2), equals(1));
+    expect(fei_bo_na_qi_shu_lie.Solution().fib(5), equals(5));
   });
 }
