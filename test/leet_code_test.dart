@@ -1,3 +1,4 @@
+import 'package:leet_code_dart/src/learn/illustration_of_algorithm/cong_wei_dao_tou.dart';
 import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
@@ -43,6 +44,9 @@ import 'package:leet_code_dart/src/practice/container_with_most_water.dart'
     as container_with_most_water;
 import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart' as yong_liang_ge_zhan;
 import 'package:leet_code_dart/src/offer/fei_bo_na_qi_shu_lie.dart' as fei_bo_na_qi_shu_lie;
+import 'package:leet_code_dart/src/offer/xuan_zhuan_shu_zu.dart' as xuan_zhuan_shu_zu;
+import 'package:leet_code_dart/src/offer/da_yin_cong.dart' as da_yin_cong;
+import 'package:leet_code_dart/src/offer/shan_chu_lian_biao.dart' as shan_chu_lian_biao;
 
 void main() {
   // 测试reverseWords
@@ -283,5 +287,29 @@ void main() {
   test("fei_bo_na_qi_shu_lie", () {
     expect(fei_bo_na_qi_shu_lie.Solution().fib(2), equals(1));
     expect(fei_bo_na_qi_shu_lie.Solution().fib(5), equals(5));
+  });
+
+  // 剑指 Offer 11. 旋转数组的最小数字
+  test("xuan_zhuan_shu_zu", () {
+    expect(xuan_zhuan_shu_zu.Solution().minArray([3,4,5,1,2]), equals(1));
+    expect(xuan_zhuan_shu_zu.Solution().minArray([2,2,2,0,1]), equals(0));
+  });
+
+  // 剑指 Offer 17. 打印从1到最大的n位数
+  test("da_yin_cong", () {
+    expect(da_yin_cong.Solution().printNumbers(1), equals([1,2,3,4,5,6,7,8,9]));
+  });
+
+  // 剑指 Offer 18. 删除链表的节点
+  test("shan_chu_lian_biao", () {
+    shan_chu_lian_biao.ListNode? listNode4 = shan_chu_lian_biao.ListNode(4);
+    shan_chu_lian_biao.ListNode listNode5 = shan_chu_lian_biao.ListNode(5);
+    shan_chu_lian_biao.ListNode listNode1 = shan_chu_lian_biao.ListNode(1);
+    shan_chu_lian_biao.ListNode listNode9 = shan_chu_lian_biao.ListNode(9);
+    listNode4.next = listNode5;
+    listNode5.next = listNode1;
+    listNode1.next = listNode9;
+
+    expect(shan_chu_lian_biao.Solution().deleteNode(listNode4, 5), equals([1,2,3,4,5,6,7,8,9]));
   });
 }
