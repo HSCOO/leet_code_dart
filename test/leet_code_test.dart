@@ -47,6 +47,7 @@ import 'package:leet_code_dart/src/offer/fei_bo_na_qi_shu_lie.dart' as fei_bo_na
 import 'package:leet_code_dart/src/offer/xuan_zhuan_shu_zu.dart' as xuan_zhuan_shu_zu;
 import 'package:leet_code_dart/src/offer/da_yin_cong.dart' as da_yin_cong;
 import 'package:leet_code_dart/src/offer/shan_chu_lian_biao.dart' as shan_chu_lian_biao;
+import 'package:leet_code_dart/src/offer/diao_zheng_shu_zu.dart' as diao_zheng_shu_zu;
 
 void main() {
   // 测试reverseWords
@@ -311,5 +312,11 @@ void main() {
     listNode1.next = listNode9;
 
     expect(shan_chu_lian_biao.Solution().deleteNode(listNode4, 5), equals([1,2,3,4,5,6,7,8,9]));
+  });
+
+  // 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面
+  test("diao_zheng_shu_zu", () {
+    expect(diao_zheng_shu_zu.Solution().exchange([1,2,3,4]), equals([1,3,2,4]));
+    expect(diao_zheng_shu_zu.Solution().exchange([1,2,3,4,5]), equals([1,3,5,2,4]));
   });
 }
