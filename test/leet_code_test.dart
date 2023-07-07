@@ -42,12 +42,19 @@ import 'package:leet_code_dart/src/practice/generate_parentheses.dart'
     as generate_parentheses;
 import 'package:leet_code_dart/src/practice/container_with_most_water.dart'
     as container_with_most_water;
-import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart' as yong_liang_ge_zhan;
-import 'package:leet_code_dart/src/offer/fei_bo_na_qi_shu_lie.dart' as fei_bo_na_qi_shu_lie;
-import 'package:leet_code_dart/src/offer/xuan_zhuan_shu_zu.dart' as xuan_zhuan_shu_zu;
+import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart'
+    as yong_liang_ge_zhan;
+import 'package:leet_code_dart/src/offer/fei_bo_na_qi_shu_lie.dart'
+    as fei_bo_na_qi_shu_lie;
+import 'package:leet_code_dart/src/offer/xuan_zhuan_shu_zu.dart'
+    as xuan_zhuan_shu_zu;
 import 'package:leet_code_dart/src/offer/da_yin_cong.dart' as da_yin_cong;
-import 'package:leet_code_dart/src/offer/shan_chu_lian_biao.dart' as shan_chu_lian_biao;
-import 'package:leet_code_dart/src/offer/diao_zheng_shu_zu.dart' as diao_zheng_shu_zu;
+import 'package:leet_code_dart/src/offer/shan_chu_lian_biao.dart'
+    as shan_chu_lian_biao;
+import 'package:leet_code_dart/src/offer/diao_zheng_shu_zu.dart'
+    as diao_zheng_shu_zu;
+import 'package:leet_code_dart/src/offer/shun_shi_zhen_da_yin.dart'
+    as shun_shi_zhen_da_yin;
 
 void main() {
   // 测试reverseWords
@@ -254,8 +261,8 @@ void main() {
         ));
     expect(
         generate_parentheses.Solution().generateParenthesis(1), equals(["()"]));
-    expect(
-        generate_parentheses.Solution().generateParenthesis(2), equals(["(())","()()"]));
+    expect(generate_parentheses.Solution().generateParenthesis(2),
+        equals(["(())", "()()"]));
   });
 
   // 接水最多
@@ -292,13 +299,14 @@ void main() {
 
   // 剑指 Offer 11. 旋转数组的最小数字
   test("xuan_zhuan_shu_zu", () {
-    expect(xuan_zhuan_shu_zu.Solution().minArray([3,4,5,1,2]), equals(1));
-    expect(xuan_zhuan_shu_zu.Solution().minArray([2,2,2,0,1]), equals(0));
+    expect(xuan_zhuan_shu_zu.Solution().minArray([3, 4, 5, 1, 2]), equals(1));
+    expect(xuan_zhuan_shu_zu.Solution().minArray([2, 2, 2, 0, 1]), equals(0));
   });
 
   // 剑指 Offer 17. 打印从1到最大的n位数
   test("da_yin_cong", () {
-    expect(da_yin_cong.Solution().printNumbers(1), equals([1,2,3,4,5,6,7,8,9]));
+    expect(da_yin_cong.Solution().printNumbers(1),
+        equals([1, 2, 3, 4, 5, 6, 7, 8, 9]));
   });
 
   // 剑指 Offer 18. 删除链表的节点
@@ -311,12 +319,33 @@ void main() {
     listNode5.next = listNode1;
     listNode1.next = listNode9;
 
-    expect(shan_chu_lian_biao.Solution().deleteNode(listNode4, 5), equals([1,2,3,4,5,6,7,8,9]));
+    expect(shan_chu_lian_biao.Solution().deleteNode(listNode4, 5),
+        equals([1, 2, 3, 4, 5, 6, 7, 8, 9]));
   });
 
   // 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面
   test("diao_zheng_shu_zu", () {
-    expect(diao_zheng_shu_zu.Solution().exchange([1,2,3,4]), equals([1,3,2,4]));
-    expect(diao_zheng_shu_zu.Solution().exchange([1,2,3,4,5]), equals([1,3,5,2,4]));
+    expect(diao_zheng_shu_zu.Solution().exchange([1, 2, 3, 4]),
+        equals([1, 3, 2, 4]));
+    expect(diao_zheng_shu_zu.Solution().exchange([1, 2, 3, 4, 5]),
+        equals([1, 3, 5, 2, 4]));
+  });
+
+  // 顺时针打印矩阵
+  test("shun_shi_zhen_da_yin", () {
+    expect(
+        shun_shi_zhen_da_yin.Solution().spiralOrder([
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]
+        ]),
+        equals([1, 2, 3, 6, 9, 8, 7, 4, 5]));
+    expect(
+        shun_shi_zhen_da_yin.Solution().spiralOrder([
+          [1, 2, 3, 4],
+          [5, 6, 7, 8],
+          [9, 10, 11, 12]
+        ]),
+        equals([1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]));
   });
 }
