@@ -55,6 +55,7 @@ import 'package:leet_code_dart/src/offer/diao_zheng_shu_zu.dart'
     as diao_zheng_shu_zu;
 import 'package:leet_code_dart/src/offer/shun_shi_zhen_da_yin.dart'
     as shun_shi_zhen_da_yin;
+import 'package:leet_code_dart/src/offer/di_yi_ge_zhi_chu.dart' as di_yi_ge_zhi_chu;
 
 void main() {
   // 测试reverseWords
@@ -347,5 +348,12 @@ void main() {
           [9, 10, 11, 12]
         ]),
         equals([1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]));
+  });
+
+  // 剑指 Offer 50. 第一个只出现一次的字符
+  test("di_yi_ge_zhi_chu", () {
+    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("ss"),equals(" "));
+    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("aadadaad"),equals(" "));
+    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("acaadcad"),equals(" "));
   });
 }
