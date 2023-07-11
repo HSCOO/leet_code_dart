@@ -58,7 +58,7 @@ import 'package:leet_code_dart/src/offer/shun_shi_zhen_da_yin.dart'
 import 'package:leet_code_dart/src/offer/di_yi_ge_zhi_chu.dart' as di_yi_ge_zhi_chu;
 import 'package:leet_code_dart/src/offer/liang_g_lian_biao_de_di.dart' as liang_g_lian_biao_de_di;
 import 'package:leet_code_dart/src/offer/zai_pai_xu_sh_zu_zhong.dart' as zai_pai_xu_sh_zu_zhong;
-
+import 'package:leet_code_dart/src/offer/que_shi_de_shu.dart' as que_shi_de_shu;
 
 void main() {
   // 测试reverseWords
@@ -387,8 +387,20 @@ void main() {
     expect(liang_g_lian_biao_de_di.Solution().getIntersectionNode(headA, headB),equals(nodeC1));
   });
   
-  //
+  // 剑指 Offer 53 - I. 在排序数组中查找数字 I
   test("zai_pai_xu_sh_zu_zhong", () {
     expect(zai_pai_xu_sh_zu_zhong.Solution().search([5,7,7,8,8,10], 8),equals(2));
+  });
+
+  //
+  test("que_shi_de_shu", () {
+    expect(que_shi_de_shu.Solution().missingNumber([0,1,3]),equals(2));
+    expect(que_shi_de_shu.Solution().missingNumber([0]),equals(1));
+    expect(que_shi_de_shu.Solution().missingNumber([1]),equals(0));
+    expect(que_shi_de_shu.Solution().missingNumber([0,1]),equals(2));
+    expect(que_shi_de_shu.Solution().missingNumber([0,1,2]),equals(3));
+    expect(que_shi_de_shu.Solution().missingNumber([0,2,3]),equals(1));
+    expect(que_shi_de_shu.Solution().missingNumber([0,1,2,4,5]),equals(3));
+
   });
 }
