@@ -56,6 +56,9 @@ import 'package:leet_code_dart/src/offer/diao_zheng_shu_zu.dart'
 import 'package:leet_code_dart/src/offer/shun_shi_zhen_da_yin.dart'
     as shun_shi_zhen_da_yin;
 import 'package:leet_code_dart/src/offer/di_yi_ge_zhi_chu.dart' as di_yi_ge_zhi_chu;
+import 'package:leet_code_dart/src/offer/liang_g_lian_biao_de_di.dart' as liang_g_lian_biao_de_di;
+import 'package:leet_code_dart/src/offer/zai_pai_xu_sh_zu_zhong.dart' as zai_pai_xu_sh_zu_zhong;
+
 
 void main() {
   // 测试reverseWords
@@ -355,5 +358,37 @@ void main() {
     expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("ss"),equals(" "));
     expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("aadadaad"),equals(" "));
     expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("acaadcad"),equals(" "));
+  });
+
+  // 剑指 Offer 52. 两个链表的第一个公共节点
+  test("liang_g_lian_biao_de_di", () {
+    liang_g_lian_biao_de_di.ListNode nodeA1 = liang_g_lian_biao_de_di.ListNode(4);
+    liang_g_lian_biao_de_di.ListNode nodeA2 = liang_g_lian_biao_de_di.ListNode(1);
+    
+    liang_g_lian_biao_de_di.ListNode nodeC1 = liang_g_lian_biao_de_di.ListNode(8);
+    liang_g_lian_biao_de_di.ListNode nodeC2 = liang_g_lian_biao_de_di.ListNode(4);
+    liang_g_lian_biao_de_di.ListNode nodeC3 = liang_g_lian_biao_de_di.ListNode(5);
+    nodeC1.next = nodeC2;
+    nodeC2.next = nodeC3;
+   
+    liang_g_lian_biao_de_di.ListNode nodeB1 = liang_g_lian_biao_de_di.ListNode(5);
+    liang_g_lian_biao_de_di.ListNode nodeB2 = liang_g_lian_biao_de_di.ListNode(0);
+    liang_g_lian_biao_de_di.ListNode nodeB3 = liang_g_lian_biao_de_di.ListNode(1);
+
+    liang_g_lian_biao_de_di.ListNode headA = nodeA1;
+    headA.next = nodeA2;
+    nodeA2.next = nodeC1;
+
+    liang_g_lian_biao_de_di.ListNode headB = nodeB1;
+    headB.next = nodeB2;
+    nodeB2.next = nodeB3;
+    nodeB3.next = nodeC1;
+
+    expect(liang_g_lian_biao_de_di.Solution().getIntersectionNode(headA, headB),equals(nodeC1));
+  });
+  
+  //
+  test("zai_pai_xu_sh_zu_zhong", () {
+    expect(zai_pai_xu_sh_zu_zhong.Solution().search([5,7,7,8,8,10], 8),equals(2));
   });
 }
