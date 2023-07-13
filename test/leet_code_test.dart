@@ -403,4 +403,6 @@ void main() {
     expect(que_shi_de_shu.Solution().missingNumber([0,1,2,4,5]),equals(3));
 
   });
+
+  List.generate(4, (index) => List.generate(4,(index) => 0));
 }
