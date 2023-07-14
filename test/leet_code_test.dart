@@ -55,10 +55,14 @@ import 'package:leet_code_dart/src/offer/diao_zheng_shu_zu.dart'
     as diao_zheng_shu_zu;
 import 'package:leet_code_dart/src/offer/shun_shi_zhen_da_yin.dart'
     as shun_shi_zhen_da_yin;
-import 'package:leet_code_dart/src/offer/di_yi_ge_zhi_chu.dart' as di_yi_ge_zhi_chu;
-import 'package:leet_code_dart/src/offer/liang_g_lian_biao_de_di.dart' as liang_g_lian_biao_de_di;
-import 'package:leet_code_dart/src/offer/zai_pai_xu_sh_zu_zhong.dart' as zai_pai_xu_sh_zu_zhong;
+import 'package:leet_code_dart/src/offer/di_yi_ge_zhi_chu.dart'
+    as di_yi_ge_zhi_chu;
+import 'package:leet_code_dart/src/offer/liang_g_lian_biao_de_di.dart'
+    as liang_g_lian_biao_de_di;
+import 'package:leet_code_dart/src/offer/zai_pai_xu_sh_zu_zhong.dart'
+    as zai_pai_xu_sh_zu_zhong;
 import 'package:leet_code_dart/src/offer/que_shi_de_shu.dart' as que_shi_de_shu;
+import 'package:leet_code_dart/src/offer/he_wei_sde_lian_xu_zheng.dart' as he_wei_sde_lian_xu_zheng;
 
 void main() {
   // 测试reverseWords
@@ -355,25 +359,33 @@ void main() {
 
   // 剑指 Offer 50. 第一个只出现一次的字符
   test("di_yi_ge_zhi_chu", () {
-    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("ss"),equals(" "));
-    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("aadadaad"),equals(" "));
-    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("acaadcad"),equals(" "));
+    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("ss"), equals(" "));
+    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("aadadaad"), equals(" "));
+    expect(di_yi_ge_zhi_chu.Solution().firstUniqChar("acaadcad"), equals(" "));
   });
 
   // 剑指 Offer 52. 两个链表的第一个公共节点
   test("liang_g_lian_biao_de_di", () {
-    liang_g_lian_biao_de_di.ListNode nodeA1 = liang_g_lian_biao_de_di.ListNode(4);
-    liang_g_lian_biao_de_di.ListNode nodeA2 = liang_g_lian_biao_de_di.ListNode(1);
-    
-    liang_g_lian_biao_de_di.ListNode nodeC1 = liang_g_lian_biao_de_di.ListNode(8);
-    liang_g_lian_biao_de_di.ListNode nodeC2 = liang_g_lian_biao_de_di.ListNode(4);
-    liang_g_lian_biao_de_di.ListNode nodeC3 = liang_g_lian_biao_de_di.ListNode(5);
+    liang_g_lian_biao_de_di.ListNode nodeA1 =
+        liang_g_lian_biao_de_di.ListNode(4);
+    liang_g_lian_biao_de_di.ListNode nodeA2 =
+        liang_g_lian_biao_de_di.ListNode(1);
+
+    liang_g_lian_biao_de_di.ListNode nodeC1 =
+        liang_g_lian_biao_de_di.ListNode(8);
+    liang_g_lian_biao_de_di.ListNode nodeC2 =
+        liang_g_lian_biao_de_di.ListNode(4);
+    liang_g_lian_biao_de_di.ListNode nodeC3 =
+        liang_g_lian_biao_de_di.ListNode(5);
     nodeC1.next = nodeC2;
     nodeC2.next = nodeC3;
-   
-    liang_g_lian_biao_de_di.ListNode nodeB1 = liang_g_lian_biao_de_di.ListNode(5);
-    liang_g_lian_biao_de_di.ListNode nodeB2 = liang_g_lian_biao_de_di.ListNode(0);
-    liang_g_lian_biao_de_di.ListNode nodeB3 = liang_g_lian_biao_de_di.ListNode(1);
+
+    liang_g_lian_biao_de_di.ListNode nodeB1 =
+        liang_g_lian_biao_de_di.ListNode(5);
+    liang_g_lian_biao_de_di.ListNode nodeB2 =
+        liang_g_lian_biao_de_di.ListNode(0);
+    liang_g_lian_biao_de_di.ListNode nodeB3 =
+        liang_g_lian_biao_de_di.ListNode(1);
 
     liang_g_lian_biao_de_di.ListNode headA = nodeA1;
     headA.next = nodeA2;
@@ -384,25 +396,55 @@ void main() {
     nodeB2.next = nodeB3;
     nodeB3.next = nodeC1;
 
-    expect(liang_g_lian_biao_de_di.Solution().getIntersectionNode(headA, headB),equals(nodeC1));
+    expect(liang_g_lian_biao_de_di.Solution().getIntersectionNode(headA, headB),
+        equals(nodeC1));
   });
-  
+
   // 剑指 Offer 53 - I. 在排序数组中查找数字 I
   test("zai_pai_xu_sh_zu_zhong", () {
-    expect(zai_pai_xu_sh_zu_zhong.Solution().search([5,7,7,8,8,10], 8),equals(2));
+    expect(zai_pai_xu_sh_zu_zhong.Solution().search([5, 7, 7, 8, 8, 10], 8),
+        equals(2));
   });
 
   //
   test("que_shi_de_shu", () {
-    expect(que_shi_de_shu.Solution().missingNumber([0,1,3]),equals(2));
-    expect(que_shi_de_shu.Solution().missingNumber([0]),equals(1));
-    expect(que_shi_de_shu.Solution().missingNumber([1]),equals(0));
-    expect(que_shi_de_shu.Solution().missingNumber([0,1]),equals(2));
-    expect(que_shi_de_shu.Solution().missingNumber([0,1,2]),equals(3));
-    expect(que_shi_de_shu.Solution().missingNumber([0,2,3]),equals(1));
-    expect(que_shi_de_shu.Solution().missingNumber([0,1,2,4,5]),equals(3));
-
+    expect(que_shi_de_shu.Solution().missingNumber([0, 1, 3]), equals(2));
+    expect(que_shi_de_shu.Solution().missingNumber([0]), equals(1));
+    expect(que_shi_de_shu.Solution().missingNumber([1]), equals(0));
+    expect(que_shi_de_shu.Solution().missingNumber([0, 1]), equals(2));
+    expect(que_shi_de_shu.Solution().missingNumber([0, 1, 2]), equals(3));
+    expect(que_shi_de_shu.Solution().missingNumber([0, 2, 3]), equals(1));
+    expect(que_shi_de_shu.Solution().missingNumber([0, 1, 2, 4, 5]), equals(3));
   });
 
-  List.generate(4, (index) => List.generate(4,(index) => 0));
+  // he_wei_sde_lian_xu_zheng
+  test("he_wei_sde_lian_xu_zheng", () {
+    expect(he_wei_sde_lian_xu_zheng.Solution().findContinuousSequence(9), equals([[2,3,4],[4,5]]));
+  });
+}
+
+int totalPrice(int trans) {
+  Map<int, int> rules = {
+    1: 0,
+    5: 30 * 5,
+    20: 20 * 15,
+    50: 10 * 30,
+    100: 9 * 50,
+    500: 8 * 400,
+    1000: 7 * 500,
+    2000: 6 * 1000,
+    3000: 5 * 1000,
+    4000: 4 * 1000,
+    5000: 3 * 1000,
+    6000: 2 * 1000,
+  };
+  final int len = rules.length;
+  int i = 0;
+  int res = 0;
+  while(i+1 < len){
+    // if (trans >= rules.keys![i]) {
+    //
+    // }
+  }
+  return 0;
 }
