@@ -63,6 +63,7 @@ import 'package:leet_code_dart/src/offer/zai_pai_xu_sh_zu_zhong.dart'
     as zai_pai_xu_sh_zu_zhong;
 import 'package:leet_code_dart/src/offer/que_shi_de_shu.dart' as que_shi_de_shu;
 import 'package:leet_code_dart/src/offer/he_wei_sde_lian_xu_zheng.dart' as he_wei_sde_lian_xu_zheng;
+import 'package:leet_code_dart/src/offer/fan_zhuan_dan_ci_shun_xu.dart' as fan_zhuan_dan_ci_shun_xu;
 
 void main() {
   // 测试reverseWords
@@ -420,6 +421,11 @@ void main() {
   // he_wei_sde_lian_xu_zheng
   test("he_wei_sde_lian_xu_zheng", () {
     expect(he_wei_sde_lian_xu_zheng.Solution().findContinuousSequence(9), equals([[2,3,4],[4,5]]));
+  });
+
+  //
+  test("fan_zhuan_dan_ci_shun_xu", () {
+    expect(fan_zhuan_dan_ci_shun_xu.Solution().reverseWords("the sky is blue"), equals("blue is sky the"));
   });
 }
 
