@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:leet_code_dart/src/learn/illustration_of_algorithm/cong_wei_dao_tou.dart';
 import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart';
 import 'package:test/expect.dart';
@@ -62,8 +64,10 @@ import 'package:leet_code_dart/src/offer/liang_g_lian_biao_de_di.dart'
 import 'package:leet_code_dart/src/offer/zai_pai_xu_sh_zu_zhong.dart'
     as zai_pai_xu_sh_zu_zhong;
 import 'package:leet_code_dart/src/offer/que_shi_de_shu.dart' as que_shi_de_shu;
-import 'package:leet_code_dart/src/offer/he_wei_sde_lian_xu_zheng.dart' as he_wei_sde_lian_xu_zheng;
-import 'package:leet_code_dart/src/offer/fan_zhuan_dan_ci_shun_xu.dart' as fan_zhuan_dan_ci_shun_xu;
+import 'package:leet_code_dart/src/offer/he_wei_sde_lian_xu_zheng.dart'
+    as he_wei_sde_lian_xu_zheng;
+import 'package:leet_code_dart/src/offer/fan_zhuan_dan_ci_shun_xu.dart'
+    as fan_zhuan_dan_ci_shun_xu;
 
 void main() {
   // 测试reverseWords
@@ -420,37 +424,60 @@ void main() {
 
   // he_wei_sde_lian_xu_zheng
   test("he_wei_sde_lian_xu_zheng", () {
-    expect(he_wei_sde_lian_xu_zheng.Solution().findContinuousSequence(9), equals([[2,3,4],[4,5]]));
+    expect(
+        he_wei_sde_lian_xu_zheng.Solution().findContinuousSequence(9),
+        equals([
+          [2, 3, 4],
+          [4, 5]
+        ]));
   });
 
   //
   test("fan_zhuan_dan_ci_shun_xu", () {
-    expect(fan_zhuan_dan_ci_shun_xu.Solution().reverseWords("the sky is blue"), equals("blue is sky the"));
+    expect(fan_zhuan_dan_ci_shun_xu.Solution().reverseWords("the sky is blue"),
+        equals("blue is sky the"));
   });
 }
 
+
+// 设计一个函数，根据用户交易量算出交易费用
+// 1-5笔单价30元，
+// 6-20笔单价20元，
+// 21-50笔单价10元，
+// 51-100笔单价9元，
+// 101-500笔单价8元，
+// 501-1000笔单价7元，
+// 1001-2000笔单价6元，
+// 2001-3000笔单价5元，
+// 3001-4000笔单价4元，
+// 4001-5000笔单价3元，
+// 5001-6000笔单价2元，
+// 6001以上单价1元，
 int totalPrice(int trans) {
   Map<int, int> rules = {
     1: 0,
-    5: 30 * 5,
-    20: 20 * 15,
-    50: 10 * 30,
-    100: 9 * 50,
-    500: 8 * 400,
-    1000: 7 * 500,
-    2000: 6 * 1000,
-    3000: 5 * 1000,
-    4000: 4 * 1000,
-    5000: 3 * 1000,
-    6000: 2 * 1000,
+    5: 30,
+    20: 20,
+    50: 10,
+    100: 9,
+    500: 8,
+    1000: 7,
+    2000: 6,
+    3000: 5,
+    4000: 4,
+    5000: 3,
+    6000: 2,
+    6001: 1
   };
-  final int len = rules.length;
-  int i = 0;
   int res = 0;
-  while(i+1 < len){
-    // if (trans >= rules.keys![i]) {
-    //
-    // }
-  }
-  return 0;
+  int lastKey = 1;
+  rules.forEach((key, value) {
+    if (trans > key) {
+      res += (key - lastKey + 1) * value;
+    } else {
+      res += (trans - lastKey) * value;
+    }
+    lastKey = key;
+  });
+  return res;
 }
