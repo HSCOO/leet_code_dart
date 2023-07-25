@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:leet_code_dart/src/learn/illustration_of_algorithm/cong_wei_dao_tou.dart';
 import 'package:leet_code_dart/src/learn/illustration_of_algorithm/yong_liang_ge_zhan.dart';
@@ -68,6 +67,8 @@ import 'package:leet_code_dart/src/offer/he_wei_sde_lian_xu_zheng.dart'
     as he_wei_sde_lian_xu_zheng;
 import 'package:leet_code_dart/src/offer/fan_zhuan_dan_ci_shun_xu.dart'
     as fan_zhuan_dan_ci_shun_xu;
+
+import 'package:leet_code_dart/src/offer/tvdfij.dart' as tvdfij;
 
 void main() {
   // 测试reverseWords
@@ -437,8 +438,16 @@ void main() {
     expect(fan_zhuan_dan_ci_shun_xu.Solution().reverseWords("the sky is blue"),
         equals("blue is sky the"));
   });
-}
 
+  // 左右两边子数组的和相等
+  test("tvdfij", () {
+    // expect(tvdfij.Solution().pivotIndex([1, 7, 3, 6, 5, 6]), equals(3));
+    // expect(tvdfij.Solution().pivotIndex([1,2,3]), equals(-1));
+    // expect(tvdfij.Solution().pivotIndex([2,1,-1]), equals(0));
+    //
+    expect(tvdfij.Solution().pivotIndex([-1,-1,-1,-1,-1,0]), equals(2));
+  });
+}
 
 // 设计一个函数，根据用户交易量算出交易费用
 // 1-5笔单价30元，
